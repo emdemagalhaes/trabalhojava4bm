@@ -1,5 +1,8 @@
 package br.emerson.cadastros;
 
+import br.emerson.enuns.Estado;
+import br.emerson.enuns.Genero;
+
 public class Cliente {
 	private int id;
 	private String nome;
