@@ -1,28 +1,37 @@
 package br.emerson.telas;
 
 import javax.swing.JPanel;
+
 import java.awt.GridBagLayout;
+
 import javax.swing.JLabel;
+
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 
+import br.emerson.enuns.Estado;
+import br.emerson.enuns.Genero;
+
 public class CadClientes extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField txtIdade;
+	private JTextField txtNome;
+	private JTextField txtEndereço;
 	private JLabel lblSexo;
-	private JComboBox comboBox;
-	private JComboBox comboBox_1;
+	private JComboBox cBoxEstado;
+	private JComboBox cboxSexo;
 	private JLabel lblEmail;
 	private JLabel lblTelefone;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField txtEmail;
+	private JTextField txtTelefone;
 	private JLabel lblCidade;
-	private JTextField textField_5;
+	private JTextField txtCidade;
 	private JButton btnSalvar;
 	private JButton btnSair;
 
@@ -46,15 +55,16 @@ public class CadClientes extends JPanel {
 		gbc_lblNewLabel.gridy = 1;
 		add(lblNewLabel, gbc_lblNewLabel);
 		
-		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.gridwidth = 4;
-		gbc_textField.insets = new Insets(0, 0, 5, 5);
-		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField.gridx = 1;
-		gbc_textField.gridy = 1;
-		add(textField, gbc_textField);
-		textField.setColumns(10);
+		txtIdade = new JTextField();
+		GridBagConstraints gbc_txtIdade = new GridBagConstraints();
+		gbc_txtIdade.anchor = GridBagConstraints.NORTH;
+		gbc_txtIdade.gridwidth = 4;
+		gbc_txtIdade.insets = new Insets(0, 0, 5, 5);
+		gbc_txtIdade.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtIdade.gridx = 1;
+		gbc_txtIdade.gridy = 1;
+		add(txtIdade, gbc_txtIdade);
+		txtIdade.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome");
 		GridBagConstraints gbc_lblNewLabel_1 = new GridBagConstraints();
@@ -64,15 +74,15 @@ public class CadClientes extends JPanel {
 		gbc_lblNewLabel_1.gridy = 2;
 		add(lblNewLabel_1, gbc_lblNewLabel_1);
 		
-		textField_1 = new JTextField();
-		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
-		gbc_textField_1.gridwidth = 8;
-		gbc_textField_1.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_1.gridx = 1;
-		gbc_textField_1.gridy = 2;
-		add(textField_1, gbc_textField_1);
-		textField_1.setColumns(10);
+		txtNome = new JTextField();
+		GridBagConstraints gbc_txtNome = new GridBagConstraints();
+		gbc_txtNome.gridwidth = 8;
+		gbc_txtNome.insets = new Insets(0, 0, 5, 5);
+		gbc_txtNome.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtNome.gridx = 1;
+		gbc_txtNome.gridy = 2;
+		add(txtNome, gbc_txtNome);
+		txtNome.setColumns(10);
 		
 		lblSexo = new JLabel("Sexo");
 		GridBagConstraints gbc_lblSexo = new GridBagConstraints();
@@ -82,14 +92,17 @@ public class CadClientes extends JPanel {
 		gbc_lblSexo.gridy = 2;
 		add(lblSexo, gbc_lblSexo);
 		
-		comboBox_1 = new JComboBox();
-		GridBagConstraints gbc_comboBox_1 = new GridBagConstraints();
-		gbc_comboBox_1.gridwidth = 2;
-		gbc_comboBox_1.insets = new Insets(0, 0, 5, 5);
-		gbc_comboBox_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox_1.gridx = 10;
-		gbc_comboBox_1.gridy = 2;
-		add(comboBox_1, gbc_comboBox_1);
+		cboxSexo = new JComboBox();
+		GridBagConstraints gbc_cboxSexo = new GridBagConstraints();
+		gbc_cboxSexo.gridwidth = 2;
+		gbc_cboxSexo.insets = new Insets(0, 0, 5, 5);
+		gbc_cboxSexo.fill = GridBagConstraints.HORIZONTAL;
+		gbc_cboxSexo.gridx = 10;
+		gbc_cboxSexo.gridy = 2;
+		add(cboxSexo, gbc_cboxSexo);
+		
+
+		cboxSexo.setModel((ComboBoxModel) new DefaultComboBoxModel(Genero.values()));
 		
 		JLabel lblNewLabel_2 = new JLabel("Endere\u00E7o");
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
@@ -100,15 +113,15 @@ public class CadClientes extends JPanel {
 		gbc_lblNewLabel_2.gridy = 3;
 		add(lblNewLabel_2, gbc_lblNewLabel_2);
 		
-		textField_2 = new JTextField();
-		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
-		gbc_textField_2.gridwidth = 8;
-		gbc_textField_2.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_2.gridx = 1;
-		gbc_textField_2.gridy = 3;
-		add(textField_2, gbc_textField_2);
-		textField_2.setColumns(10);
+		txtEndereço = new JTextField();
+		GridBagConstraints gbc_txtEndereço = new GridBagConstraints();
+		gbc_txtEndereço.gridwidth = 8;
+		gbc_txtEndereço.insets = new Insets(0, 0, 5, 5);
+		gbc_txtEndereço.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtEndereço.gridx = 1;
+		gbc_txtEndereço.gridy = 3;
+		add(txtEndereço, gbc_txtEndereço);
+		txtEndereço.setColumns(10);
 		
 		lblCidade = new JLabel("Cidade");
 		GridBagConstraints gbc_lblCidade = new GridBagConstraints();
@@ -118,15 +131,15 @@ public class CadClientes extends JPanel {
 		gbc_lblCidade.gridy = 4;
 		add(lblCidade, gbc_lblCidade);
 		
-		textField_5 = new JTextField();
-		GridBagConstraints gbc_textField_5 = new GridBagConstraints();
-		gbc_textField_5.gridwidth = 8;
-		gbc_textField_5.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_5.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_5.gridx = 1;
-		gbc_textField_5.gridy = 4;
-		add(textField_5, gbc_textField_5);
-		textField_5.setColumns(10);
+		txtCidade = new JTextField();
+		GridBagConstraints gbc_txtCidade = new GridBagConstraints();
+		gbc_txtCidade.gridwidth = 8;
+		gbc_txtCidade.insets = new Insets(0, 0, 5, 5);
+		gbc_txtCidade.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtCidade.gridx = 1;
+		gbc_txtCidade.gridy = 4;
+		add(txtCidade, gbc_txtCidade);
+		txtCidade.setColumns(10);
 		
 		JLabel lblNewLabel_3 = new JLabel("Estado");
 		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
@@ -136,14 +149,17 @@ public class CadClientes extends JPanel {
 		gbc_lblNewLabel_3.gridy = 4;
 		add(lblNewLabel_3, gbc_lblNewLabel_3);
 		
-		comboBox = new JComboBox();
-		GridBagConstraints gbc_comboBox = new GridBagConstraints();
-		gbc_comboBox.gridwidth = 3;
-		gbc_comboBox.insets = new Insets(0, 0, 5, 0);
-		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
-		gbc_comboBox.gridx = 10;
-		gbc_comboBox.gridy = 4;
-		add(comboBox, gbc_comboBox);
+		cBoxEstado = new JComboBox();
+		GridBagConstraints gbc_cBoxEstado = new GridBagConstraints();
+		gbc_cBoxEstado.gridwidth = 3;
+		gbc_cBoxEstado.insets = new Insets(0, 0, 5, 0);
+		gbc_cBoxEstado.fill = GridBagConstraints.HORIZONTAL;
+		gbc_cBoxEstado.gridx = 10;
+		gbc_cBoxEstado.gridy = 4;
+		add(cBoxEstado, gbc_cBoxEstado);
+
+		
+		cBoxEstado.setModel((ComboBoxModel) new DefaultComboBoxModel(Estado.values()));
 		
 		lblEmail = new JLabel("E-Mail");
 		GridBagConstraints gbc_lblEmail = new GridBagConstraints();
@@ -153,15 +169,15 @@ public class CadClientes extends JPanel {
 		gbc_lblEmail.gridy = 5;
 		add(lblEmail, gbc_lblEmail);
 		
-		textField_3 = new JTextField();
-		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
-		gbc_textField_3.gridwidth = 8;
-		gbc_textField_3.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_3.gridx = 1;
-		gbc_textField_3.gridy = 5;
-		add(textField_3, gbc_textField_3);
-		textField_3.setColumns(10);
+		txtEmail = new JTextField();
+		GridBagConstraints gbc_txtEmail = new GridBagConstraints();
+		gbc_txtEmail.gridwidth = 8;
+		gbc_txtEmail.insets = new Insets(0, 0, 5, 5);
+		gbc_txtEmail.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtEmail.gridx = 1;
+		gbc_txtEmail.gridy = 5;
+		add(txtEmail, gbc_txtEmail);
+		txtEmail.setColumns(10);
 		
 		lblTelefone = new JLabel("Telefone");
 		GridBagConstraints gbc_lblTelefone = new GridBagConstraints();
@@ -171,15 +187,15 @@ public class CadClientes extends JPanel {
 		gbc_lblTelefone.gridy = 6;
 		add(lblTelefone, gbc_lblTelefone);
 		
-		textField_4 = new JTextField();
-		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
-		gbc_textField_4.gridwidth = 6;
-		gbc_textField_4.insets = new Insets(0, 0, 5, 5);
-		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
-		gbc_textField_4.gridx = 1;
-		gbc_textField_4.gridy = 6;
-		add(textField_4, gbc_textField_4);
-		textField_4.setColumns(10);
+		txtTelefone = new JTextField();
+		GridBagConstraints gbc_txtTelefone = new GridBagConstraints();
+		gbc_txtTelefone.gridwidth = 6;
+		gbc_txtTelefone.insets = new Insets(0, 0, 5, 5);
+		gbc_txtTelefone.fill = GridBagConstraints.HORIZONTAL;
+		gbc_txtTelefone.gridx = 1;
+		gbc_txtTelefone.gridy = 6;
+		add(txtTelefone, gbc_txtTelefone);
+		txtTelefone.setColumns(10);
 		
 		btnSalvar = new JButton("Salvar");
 		GridBagConstraints gbc_btnSalvar = new GridBagConstraints();

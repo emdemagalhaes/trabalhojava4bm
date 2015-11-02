@@ -21,7 +21,6 @@ import java.awt.event.ActionEvent;
 public class TelaPrincipal extends JFrame {
 
 	private JPanel contentPane;
-	private JPanel panel;
 
 	/**
 	 * Launch the application.
@@ -66,9 +65,10 @@ public class TelaPrincipal extends JFrame {
 					@Override
 					public void run() {
 						CadClientes cadastro = new CadClientes();
-
-						panel.add(cadastro);
-						panel.setVisible(true);
+					
+						contentPane.add(cadastro);					
+						cadastro.setVisible(true);
+						
 					}
 				};
 
@@ -116,13 +116,6 @@ public class TelaPrincipal extends JFrame {
 		gbl_contentPane.columnWeights = new double[] { 1.0, Double.MIN_VALUE };
 		gbl_contentPane.rowWeights = new double[] { 1.0, Double.MIN_VALUE };
 		contentPane.setLayout(gbl_contentPane);
-
-		panel = new JPanel();
-		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.fill = GridBagConstraints.BOTH;
-		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 0;
-		contentPane.add(panel, gbc_panel);
 	}
 
 }
