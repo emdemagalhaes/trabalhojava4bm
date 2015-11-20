@@ -64,11 +64,13 @@ public class TelaPrincipal extends JFrame {
 				Runnable r = new Runnable() {
 					@Override
 					public void run() {
-						CadClientes cadastro = new CadClientes();
-					
-						contentPane.add(cadastro);					
+						CadProdutos cadastro = new CadProdutos();
+
+						cadastro.setSize(MAXIMIZED_BOTH, MAXIMIZED_BOTH);
+						contentPane.add(cadastro);
+
 						cadastro.setVisible(true);
-						
+
 					}
 				};
 
@@ -91,6 +93,26 @@ public class TelaPrincipal extends JFrame {
 		menuBar.add(mnNewMenu_2);
 
 		JMenuItem mntmCadastrar = new JMenuItem("Cadastrar");
+		mntmCadastrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Runnable r = new Runnable() {
+					@Override
+					public void run() {
+						CadClientes cadastro = new CadClientes();
+
+						cadastro.setSize(MAXIMIZED_BOTH, MAXIMIZED_BOTH);
+						contentPane.add(cadastro);
+
+						cadastro.setVisible(true);
+
+					}
+				};
+
+				Thread th = new Thread(r);
+				th.start();
+
+			}
+		});
 		mnNewMenu_2.add(mntmCadastrar);
 
 		JMenuItem mntmConsultar_1 = new JMenuItem("Consultar");

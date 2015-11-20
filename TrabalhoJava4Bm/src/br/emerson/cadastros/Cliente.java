@@ -7,17 +7,13 @@ public class Cliente {
 	private int id;
 	private String nome;
 	private String telefone;
-	private String endereço;
-	private String cidade;
-	private Estado estado;
+	private Endereco endereco;
 	private String email;
 	private Genero genero;
-	
-	
+
 	public Cliente() {
 		// TODO Auto-generated constructor stub
 	}
-	
 
 	public int getId() {
 		return id;
@@ -43,28 +39,12 @@ public class Cliente {
 		this.telefone = telefone;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public Endereco getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public Estado getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Estado estado) {
-		this.estado = estado;
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getEmail() {
