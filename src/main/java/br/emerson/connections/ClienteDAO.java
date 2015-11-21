@@ -107,7 +107,7 @@ public class ClienteDAO {
 		try {
 			EnderecoDAO enderecoDAO = new EnderecoDAO();
 			con = Conexao.conectar();
-			sql = "select * from contato";
+			sql = "select * from cliente";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			List<Cliente> contatos = new ArrayList<>();
